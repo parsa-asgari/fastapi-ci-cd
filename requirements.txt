@@ -1,0 +1,6 @@
+fastapi[standard]
+pydantic
+black
+ruff
+pytest
+pytest-cov
