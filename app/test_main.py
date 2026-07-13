@@ -24,7 +24,7 @@ async def test_items_positive():
     assert response.json() == {"item_id": 1, "q": 0}
 
 @pytest.mark.anyio
-async def test_items_positive():
+async def test_items_negative():
     async with AsyncClient(
         transport=ASGITransport(app=app), base_url="http://test"
     ) as ac:
