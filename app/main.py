@@ -12,7 +12,7 @@ async def read_root():
 
 
 @app.get("/status")
-async def read_root():
+async def status():
     return {"status": "ok"}
 
 
