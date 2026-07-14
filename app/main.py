@@ -33,6 +33,11 @@ async def ping():
     return {"output": "pong"}
 
 
+@app.get("/pong")
+async def pong():
+    return {"output": "ping"}
+
+
 @app.get("/items/{item_id}")
 async def read_item(item_id: int):
     item_quantity = items.get(item_id)
