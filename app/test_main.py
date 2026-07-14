@@ -25,6 +25,20 @@ async def test_status():
 
 
 @pytest.mark.anyio
+async def test_metrics():
+    async with AsyncClient(
+        transport=ASGITransport(app=app), base_url="http://test"
+    ) as ac:
+        response = await ac.get("/metrics")
+    assert response.status_code == 200
+    assert response.json() == {
+        "os": "5.15.167.4-microsoft-standard-WSL2",
+        "runtime": "Docker",
+        "framework": "FastAPI",
+    }
+
+
+@pytest.mark.anyio
 async def test_items_positive():
     async with AsyncClient(
         transport=ASGITransport(app=app), base_url="http://test"
