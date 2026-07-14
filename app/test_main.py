@@ -42,6 +42,26 @@ async def test_metrics():
 
 
 @pytest.mark.anyio
+async def ping():
+    async with AsyncClient(
+        transport=ASGITransport(app=app), base_url="http://test"
+    ) as ac:
+        response = await ac.get("/ping")
+    assert response.status_code == 200
+    assert response.json() == {"output": "pong"}
+
+
+@pytest.mark.anyio
+async def pong():
+    async with AsyncClient(
+        transport=ASGITransport(app=app), base_url="http://test"
+    ) as ac:
+        response = await ac.get("/pong")
+    assert response.status_code == 200
+    assert response.json() == {"output": "ping"}
+
+
+@pytest.mark.anyio
 async def test_items_positive():
     async with AsyncClient(
         transport=ASGITransport(app=app), base_url="http://test"
