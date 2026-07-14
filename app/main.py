@@ -11,6 +11,11 @@ async def read_root():
     return {"Hello": "World"}
 
 
+@app.get("/status")
+async def read_root():
+    return {"status": "ok"}
+
+
 @app.get("/items/{item_id}")
 async def read_item(item_id: int):
     item_quantity = items.get(item_id)

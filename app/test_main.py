@@ -15,6 +15,16 @@ async def test_root():
 
 
 @pytest.mark.anyio
+async def test_status():
+    async with AsyncClient(
+        transport=ASGITransport(app=app), base_url="http://test"
+    ) as ac:
+        response = await ac.get("/status")
+    assert response.status_code == 200
+    assert response.json() == {"status": "ok"}
+
+
+@pytest.mark.anyio
 async def test_items_positive():
     async with AsyncClient(
         transport=ASGITransport(app=app), base_url="http://test"
