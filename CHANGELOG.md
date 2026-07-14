@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/parsa-asgari/fastapi-ci-cd/compare/v0.1.0...v0.2.0) (2026-07-14)
+
+
+### Features
+
+* **ping-pong:** added ping and pong routes + tests ([bd776b0](https://github.com/parsa-asgari/fastapi-ci-cd/commit/bd776b0fc5273dfa2dfbc8da5c47fad8c10aa8f4))
+
 ## 0.1.0 (2026-07-14)
 
 
