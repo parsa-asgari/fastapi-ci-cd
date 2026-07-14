@@ -35,6 +35,9 @@ async def test_metrics():
         "os": "5.15.167.4-microsoft-standard-WSL2",
         "runtime": "Docker",
         "framework": "FastAPI",
+        "language": "Python",
+        "version": "0.1.0",
+        "release": "2024-06-01",
     }
 
 
