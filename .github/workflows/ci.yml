@@ -5,10 +5,10 @@ name: Continuous Integration
 ###############################################################################
 on:
     pull_request:
-    push:
-        branches:
-            - main
-    workflow_dispatch:
+    # push:  --> This causes a redundancy. only running during the PR phase is fine.
+    #     branches:
+    #         - main
+    # workflow_dispatch: --> Not needed.
 
 ###############################################################################
 # Default permissions (Principle of Least Privilege)
