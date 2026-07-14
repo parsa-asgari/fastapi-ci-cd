@@ -16,6 +16,15 @@ async def status():
     return {"status": "ok"}
 
 
+@app.get("/metrics")
+async def metric():
+    return {
+        "os": "5.15.167.4-microsoft-standard-WSL2",
+        "runtime": "Docker",
+        "framework": "FastAPI",
+    }
+
+
 @app.get("/items/{item_id}")
 async def read_item(item_id: int):
     item_quantity = items.get(item_id)
